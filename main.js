@@ -1,23 +1,27 @@
+const canvas = document.getElementById("canvas1");
+const ctx = canvas.getContext("2d");
 
 
+const r1 = new Rect(400, 400, 100, 100);
 
-// const canvasCollection = document.getElementsByClassName('my-canvas');
-// const canvasA = canvasCollection[0];
-// console.log(canvasA);
+r1.draw(ctx);
 
-// const canvasCollection2 = document.getElementsByTagName('canvas');
-// const canvasB = canvasCollection2[0];
-// console.log(canvasB);
 
-// const canvasC = document.querySelector('.my-canvas');
+function moveRect(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    r1.animate(canvas.width, canvas.height);
+    r1.draw(ctx);
 
-// const canvasD = document.querySelector('#canvas1');
+}
 
-// const canvasE = document.querySelector('canvas');
+setInterval(moveRect, 1);
 
-// const canvasCollection3 = document.querySelectorAll('.my-canvas')
+// const rectArray = [];
 
-const canvas = document.getElementById('canvas1');
-// console.log(canvas.width);
-// console.log(canvas.height);
-const ctx = canvas.getContext('2d');
+// for (let i = 0; i < 100; i++) {
+//     const rect = Rect.random(canvas.width, canvas.height);
+//     rectArray.push(rect);
+    
+// }
+
+// console.log(rectArray);
